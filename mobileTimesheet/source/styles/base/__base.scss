@@ -1,0 +1,46 @@
+// import base submodules
+@import 'normalize';
+@import 'fonts';
+@import 'variables';
+@import 'mediaqueries';
+@import 'helpers';
+@import 'animations';
+
+*, *:before, *:after { box-sizing: border-box; }
+*:focus { outline: 0 !important; -webkit-tap-highlight-color: rgba(0,0,0,0); }
+
+* { user-select: none; }
+input { user-select: auto !important; }
+
+html,
+body {
+	color: $gray;
+	height: 100%;
+	font-size: $fz;
+	line-height: $lh;
+	font-family: $ff;
+	text-align: center;
+}
+
+html,
+body,
+button {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $blue;
+	font-weight: normal;
+	font-family: $heading;
+	line-height: $lh--heading;
+
+	margin: 0 0 .5em;
+	&:first-child { margin-top: 0; }
+	&:last-child { margin-bottom: 0; }
+
+	& + :first-of-type { margin-top: 0; }
+}
+
+iframe { border: none; max-width: 100%; }

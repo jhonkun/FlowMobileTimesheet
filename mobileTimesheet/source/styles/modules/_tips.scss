@@ -1,0 +1,121 @@
+.tips-recipes {
+	.modal-content { background: transparent; }
+	.nav-tabs .active:before { background: $white; }
+}
+
+.tips-recipes__content { padding: 5vw 0 0; }
+.recipe__message { padding: 0 10%; margin: 0 0 10vw 0; text-align: center; }
+
+.tips__item {
+	position: relative;
+	background: $green;
+	padding:0 4vw 0 20vw;
+	margin-bottom: 10vw;
+
+	i {
+		position: absolute;
+		left: 4vw; top: -6vw;
+		width: 12vw;
+		height: 12vw;
+		line-height: 12vw;
+		background: $blue;
+		color:$white;
+		border-radius: 50%;
+		display: block;
+		font-family: $ff--bold;
+		font-size: 3.5vw;
+		text-align: center;
+		text-transform: uppercase;
+		transform: rotate(-15deg);
+	}
+
+	p {
+		background: $white;
+		padding: 2vw 4vw;
+		color: $green--darker;
+	}
+}
+
+.recipes__item {
+	position: relative;
+	padding: 0 4vw 0 0;
+	background: $green;
+	margin-bottom: 10vw;
+
+	i {
+		position: absolute;
+		left: 44vw; top: -6vw;
+		width: 12vw;
+		height: 12vw;
+		line-height: 12vw;
+		background: $blue;
+		color: $white;
+		border-radius: 50%;
+		display: block;
+		font-family: $ff--bold;
+		font-size: 3.5vw;
+		text-align: center;
+		text-transform: uppercase;
+		transform: rotate(-15deg);
+	}
+
+	img { width: 50vw; height: 29vw; float: left; }
+
+	p {
+		float: left;
+		width: 46vw; height: 29vw;
+		background: $white;
+		padding: 6vw 7vw 6vw 5%;
+		margin: 0;
+		color: $green--darker;
+	}
+
+	button{
+		color: $blue;
+		text-align: left;
+		line-height: 1.2em;
+
+		&:after{ background-color: $blue; }
+	}
+
+	&:after {
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		content: " ";
+		clear: both;
+		height: 0;
+	}
+}
+
+.recipes__item, .tips__item { @include slideup(); }
+
+.tips-recipes__item--vegetable{
+	background: $green;
+
+	p { color: $green--darker; }
+}
+
+.tips-recipes__item--cereal{
+	background: $orange;
+
+	p { color: $orange--darker; }
+}
+
+.tips-recipes__item--meat{
+	background: $red;
+
+	p { color: $red--darker; }
+}
+
+.tips-recipes__item--lifestyle{
+	background: $gray;
+
+	p { color: $gray; }
+}
+
+.tips-recipes__item--milk{
+	background: $blue--light;
+
+	p { color: $blue; }
+}

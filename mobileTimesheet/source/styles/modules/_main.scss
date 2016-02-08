@@ -1,0 +1,22 @@
+.main__header {
+	height: 15vw;
+	margin: 0 -5.5%;
+	user-select: none;
+	background:$white;
+
+	h1 {
+		font-size: 7vw;
+		line-height: 15vw;
+		white-space: nowrap;
+		font-family: $heading--getenough;
+	}
+}
+
+.main__burger {
+	position: absolute;
+	left: 4%; top: 4vw;
+	width: 8vw; height: 7vw;
+	padding: 0; border: none;
+	background: linear-gradient( $blue 50%, transparent 50% );
+	background-size: 100% 40%;
+}

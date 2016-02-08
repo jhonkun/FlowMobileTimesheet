@@ -1,0 +1,74 @@
+$breakpoints: (
+	'xsmall':		(max-width: 479px),
+	'small':		(max-width: 599px),
+	'medium':		(max-width: 767px),
+	'large':		(max-width: 1024px),
+	'largeOnly':	(min-width: 768px) and (max-width: 1024px),
+	'xxl':			(min-width: 1200px),
+	'tall':			(min-height: 780px),
+	'short':		(max-height: 480px),
+);
+
+// media query merger
+// create a single media condition out of a map of queries
+// @param {map} $queries - map of media queries
+@mixin media($queries) {
+	@if length($queries) == 0 {
+		@content;
+	} @else {
+		$first-key: nth(map-keys($queries), 1);
+
+		@media ($first-key: map-get($queries, $first-key)) {
+			$queries: map-remove($queries, $first-key);
+
+			@include media($queries) {
+				@content;
+			}
+		}
+	}
+}
+
+// usage example:
+// @include mq(medium) {}
+@mixin mq($breakpoint) {
+	// get the query map for $breakpoints map
+	$queries: map-get($breakpoints, $breakpoint);
+
+	// if there is no query called $breakpoint in map, throw an error
+	@if not $queries {
+		@error "No value could be retrieved from `#{$breakpoint}`. "
+		+ "Please make sure it is defined in `$breakpoints` map.";
+	}
+
+	// include the media mixin with $queries
+	@include media($queries) { @content; }
+}
+
+// usage example:
+// normally on body/html tag
+// @include breakpoint-label();
+@mixin breakpoint-label {
+	&:before {
+		z-index: 99;
+		color: black;
+		display: block;
+		font-size: 9px;
+		position: fixed;
+		font-weight: bold;
+		top: 7px; left: 0;
+		padding: 0 14px 0 12px;
+		border-radius: 0 15px 15px 0;
+		text-transform: uppercase;
+		background-color: rgba(255,255,255,.5);
+		content: "xlarge (default • 1025px - 1199px)";
+	}
+
+	@include mq('tall')		{ /* color: green; */ }
+	@include mq('large')	{ &:before { content: "large • max-width: 1024px"; } }
+	@include mq('medium')	{ &:before { content: "medium • max-width: 767px"; } }
+	@include mq('small')	{ &:before { content: "small • max-width: 599px"; } }
+	@include mq('xsmall')	{ &:before { content: "xsmall • max-width: 479px"; } }
+	@include mq('xxl')		{ &:before { content: "xxl • min-width: 1200px"; } }
+}
+
+#breakpoints { @include breakpoint-label(); }

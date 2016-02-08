@@ -1,0 +1,56 @@
+// primary colors
+$blue					: #23a2c5;
+$white					: #ffffff;
+$gray					: #4f4f4f;
+$green					: #accd6c;
+$orange					: #ebba65;
+$red 					: #dc846b;
+
+
+// primary colors' variations
+$blue--light			: #78bddc;
+$blue--vivid			: #50bdd6;
+$blue--vivid-dark		: #26a1c3;
+$blue--dimmed			: #deeff9;
+$blue--grayish			: #436D81;
+$blue--dark				: #3A6076;
+
+$gray--light			: #DCDCDC;
+$gray--lighter			: #f2f2f2;
+
+$green--darker			: #7f9750;
+
+$orange--darker			: #ba9350;
+
+$red--darker 			: #a86552;
+
+$overlay				: rgba(0, 80, 102, 0.85);
+
+// gradients
+$gradient				: linear-gradient(bottom, #23a1c5 52.29%, #00dde6 100%);
+$gradient--serving		: linear-gradient(bottom, $blue--vivid-dark 52.29%, $blue--vivid 100%);
+
+// default font-family stack
+$ff						: 'supergroteska-regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$ff--medium				: 'supergroteska-medium', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$ff--bold				: 'supergroteska-bold', Helvetica, Arial, sans-serif;
+
+// heading stacks
+$heading				: 'supergroteska-medium', Arial, sans-serif;
+$heading--getenough		: 'advert-boldregular', Arial, sans-serif;
+
+// font-size
+$fz						: 4.63vw;
+$fz--large				: 5.50vw;
+$fz--larger				: 6.20vw;
+$fz--small				: 3.8vw;
+// $fz--largest			: 5.50vw;
+
+// line-height
+$lh						: 1.25em;
+$lh-larger				: 1.15em;
+
+$lh--heading			: 1.400em;
+
+// padding
+$p--lwrapper			: 1.5rem;

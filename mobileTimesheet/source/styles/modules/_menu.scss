@@ -1,0 +1,140 @@
+$menu-width: 80.5vw;
+$menu-padding-left: 6vw;
+$menu-item-height: 14.8vw;
+
+menu {
+	margin:0; padding:0;
+
+	.menu--active & + .l-wrapper { transform: translate3d($menu-width, 0, 0); }
+}
+
+.menu__backdrop { @include anime((opacity, z-index));
+	opacity: 0;
+	z-index: 0;
+	position: fixed;
+	background-color: $overlay;
+	top: 0; left:0; right:0; bottom:0;
+
+	.menu--active & { opacity: 1; z-index: 8; }
+}
+
+.menu__hotspot-toogle { height: 100%; }
+
+.menu { @include anime(transform);
+	z-index: 9;
+	position: fixed;
+	text-align: left;
+	width: $menu-width;
+	transform: translate3d(-100%, 0, 0);
+	top: 0; right: 0; bottom: 0; left: 0;
+
+	.menu--active & { transform: translate3d(0, 0, 0); }
+}
+
+.menu__wrapper { @include anime(transform);
+	position: relative;
+	width: $menu-width; height:100vh;
+	background: url(../images/logo-getenough.png) $white no-repeat bottom 6vw left 6vw / 35vw auto;
+
+	@include mq('short') { background-position: bottom 4vw left 6vw; }
+}
+
+[class^='menu__users'] {
+	position: relative;
+	background-color: $blue;
+}
+
+.menu__user {
+	height: 15vw;
+	padding: 2.5vw 5% 2.5vw $menu-padding-left;
+
+	h1 {
+		color: $white;
+		font-size: 6vw;
+		line-height: 100%;
+		margin: 0; padding: 0;
+		font-family: $ff--bold;
+	}
+
+	h2 { color: $white; font-size: 3.5vw; text-transform: uppercase; }
+
+	button { @include anime((transform, background-color));
+		border: none;
+		position: absolute;
+		border-radius: 50%;
+		top: 2.3vw; right: 5%;
+		width: 10vw; height: 10vw;
+		background: $blue--light url(../svgs/icon--arrow-menu.svg) no-repeat 0 0 / 100% 100%;
+
+		.menu__users--active & { transform: rotate(180deg); background-color: $blue--grayish; }
+	}
+}
+
+.menu__portions {
+	padding: 7vw 5% 7vw $menu-padding-left;
+
+	@include mq('short'){ padding: 4.5vw 5% 4.5vw $menu-padding-left; }
+
+	h3 { font-size: 5vw; color:$gray; }
+	ul { padding:0; margin:0; list-style: none;}
+
+	li {
+		color:$white;
+		line-height: 14vw;
+		margin-right: 2vw;
+		border-radius: 50%;
+		background: $green;
+		text-align: center;
+		display: inline-block;
+		font-family: $ff--medium;
+
+		a { display: block; width: 14vw; height: 14vw; }
+
+		&:nth-child(2) { background: $orange; }
+		&:nth-child(3) { background: $blue--light; }
+		&:nth-child(4) { background: $red; }
+	}
+}
+
+[class^='menu__item'] {
+	color: $blue;
+	display: block;
+	font-size: 6vw;
+	text-decoration: none;
+	font-family: $ff--medium;
+	background: $gray--lighter;
+
+	height: $menu-item-height;
+	line-height: $menu-item-height;
+
+	padding: 0 5% 0 $menu-padding-left;
+	border-bottom: 2px dotted $gray--light;
+
+	&:last-child { border-bottom: 0; }
+
+	@include mq('short'){ font-size: 5vw; padding: 3.3vw 5% 3.3vw $menu-padding-left;}
+}
+
+.menu__item--dark { @include anime((height, opacity));
+	height: 0;
+	opacity: 0;
+	color: $white;
+	overflow: hidden;
+
+	border-width: 0;
+	background: $blue--grayish;
+	border-bottom-color: $blue--dark;
+
+	button {
+		top: -.8vw;
+		color: $white;
+		position: relative;
+	}
+
+	.menu__users--active & {
+		opacity: 1;
+		border-width: 2px;
+		height: $menu-item-height;
+		line-height: $menu-item-height;
+	}
+}

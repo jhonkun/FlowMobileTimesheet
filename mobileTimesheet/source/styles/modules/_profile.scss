@@ -1,0 +1,111 @@
+// modal specifics
+.modal {
+	.profile {
+		text-align: center;
+
+		.button--arrow:before { display: none; }
+	}
+}
+
+.profile__user {
+	height: 100%;
+	padding-top: 23vw;
+	@include mq('short') { padding-top: 18vw; }
+	.add-remove-user{
+		width:100%;
+		position: absolute;
+		top:12vh;
+		left:0;
+		margin:0;
+	}
+}
+.profile .swiper-button-next, .profile .swiper-button-prev{
+	top:28vw;
+}
+
+.profile__name input {
+	margin-top:30px;
+	width:60vw;
+	height:3rem;
+	margin-bottom:5vw;
+	font-family: $heading;
+	font-size: 1.6rem;
+	text-align: center;
+	color: $blue;
+	border:0.35rem solid $gray--light;
+
+	@include mq('short'){ height:2.6rem; margin-bottom: 4vw;}
+
+	&:focus {outline: none; border-color:$blue;}
+}
+.profile__language label{
+	display: inline-block;
+	width:26vw;
+	height:2.4rem;
+	margin-bottom: 1rem;
+	line-height: 9vw;
+	font-family: $heading;
+	font-size: 7vw;
+	text-align: center;
+	text-transform: uppercase;
+	color: $blue;
+	border:0.35rem solid $blue;
+
+	@include mq('short'){ height:2.2rem; font-size: 6vw; line-height: 8vw;}
+
+	&:last-child{margin-left: 7.6vw;}
+}
+.profile__language input[type=radio] {
+	display: none;
+
+	&:checked + label {background-color: $blue; color: $white;}
+}
+.profile__gender{
+	margin-top:0.2rem;
+}
+.profile__gender input[type=radio]{
+	display:none;
+
+	&:checked + .profile__gender--male{background: url(../svgs/icon--man-selected.svg) no-repeat right 6vw top; background-size: auto 100%;}
+	&:checked + .profile__gender--female{background: url(../svgs/icon--woman-selected.svg) no-repeat 6vw top; background-size: auto 100%;}
+}
+.profile__gender label{
+	display: inline-block;
+	position: relative;
+	width:30vw;
+	height:22vw;
+	font-size: 0;
+
+	@include mq('short'){ height:18vw;}
+
+	&:last-child:before{ content:''; border-left: 1px solid $gray--light; position: absolute; left: -.82vw; top:0; height:100%;}
+	div{height:100%; width: 100%;}
+}
+.profile__gender--male{background: url(../svgs/icon--man.svg) no-repeat right 6vw top; background-size: auto 100%;}
+.profile__gender--female{background: url(../svgs/icon--woman.svg) no-repeat 6vw top; background-size: auto 100%;}
+.profile__age{
+	margin:1vw 0 0 0;
+
+	h3{
+		color:$gray;
+	}
+	input[type=radio] {
+		display: none;
+
+		&:checked + label {background-color: $blue; color: $white;}
+	}
+	label{
+		display: inline-block;
+		width:17vw;
+		height:17vw;
+		margin: 0 2.5vw;
+		line-height: 14vw;
+		font-family: $heading;
+		font-size: 4.5vw;
+		text-align: center;
+		text-transform: uppercase;
+		color: $blue;
+		border-radius: 9vw;
+		border:0.35rem solid $blue;
+	}
+}

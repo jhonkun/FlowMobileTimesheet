@@ -1,0 +1,35 @@
+.intro__header {
+	h1 {
+		margin: 5% 0 0;
+		font-size: 9.5vw;
+		line-height: 1.5em;
+		white-space: nowrap;
+		font-family: $heading--getenough;
+
+		@include mq('short'){ margin: 3% 0 0;}
+	}
+
+	h3 { font-size: 5.3vw; }
+
+	.profile & {
+		position: absolute;
+		left: 5%; right: 5%;
+	}
+}
+
+.intro__footer {
+	position: absolute;
+	bottom: 6.6vh; left: 5%; right: 5%;
+}
+
+.intro__btns {
+	margin-top: 4.2vh;
+
+	button {
+		left: 2%;
+		position: absolute;
+
+		&:after { margin-right: 0; }
+		&:nth-child(2) { left: auto; right: 2%; }
+	}
+}

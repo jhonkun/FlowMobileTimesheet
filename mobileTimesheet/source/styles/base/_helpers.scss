@@ -1,0 +1,9 @@
+.indent { padding-left: 1rem; }
+
+.fleft { float:left;}
+.fright { float:right;}
+
+// clearfix
+.clearfix:before,
+.clearfix:after	{ content: " "; display: table; }
+.clearfix:after	{ clear: both; }

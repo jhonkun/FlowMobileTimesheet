@@ -1,0 +1,102 @@
+.serving {
+	header { margin-bottom: 0; }
+
+	h2 {
+		color:$white;
+		font-family: $ff--medium;
+		font-size: 5vw;
+		text-transform: uppercase;
+		position: absolute;
+		width: 100%;
+		top: 8vw;
+		z-index: 2;
+	}
+
+	h3 {
+		color:$white;
+		font-family: $ff;
+		font-size: 7vw;
+		position: absolute;
+		width: 100%;
+		top: 18vw;
+		z-index: 2;
+	}
+
+	.swiper-container {
+		position: static;
+		overflow: visible;
+		width:50vw; height: 105vw;
+	}
+
+	.swiper-slide {
+		color:$white;
+
+		img { width:40vw; margin-top:35vw; }
+		h4 { position: absolute; bottom:18vw; width:100%; color:$white; font-size: 6vw; display: none;}
+		&.swiper-slide-active h4 { display: block; }
+	}
+
+	.swiper-button-next,
+	.swiper-button-prev {
+		top:auto; bottom: 15vw;
+		background-image: url(../svgs/icon--angle-white.svg);
+	}
+
+	.swiper-button-next { right: 5%; }
+	.swiper-button-prev { left: 5%; }
+
+	.nav-tabs {
+		margin: 0;
+		padding: 0 0 8vw 0;
+
+		li {
+			width: auto;
+			list-style: none;
+			display: inline-block;
+
+			&:nth-child(1) a { background: $green; }
+			&:nth-child(2) a { background: $orange; }
+			&:nth-child(3) a { background: $blue--light; }
+			&:nth-child(4) a { background: $red; }
+
+			&:before { display: none; }
+			&.active a:after {
+				content: '';
+				margin-left: -5vw;
+				position: absolute;
+				width: 0; height: 0;
+				border-style: solid;
+				top:20.8vw; left:50%;
+				border-width: 0 5vw 5vw 5vw;
+				border-color: transparent;
+				border-bottom-color: $blue--vivid;
+			}
+		}
+
+		a {
+			opacity: 1;
+			margin: 0 3vw;
+			display: block;
+			position: relative;
+			border-radius: 50%;
+			width: 16vw; height: 16vw;
+
+		}
+	}
+
+	.tab-content {
+		height: 100vh;
+		position: relative;
+		text-align: center;
+		background-image: $gradient--serving;
+
+		> .tab-pane { @include anime(opacity);
+			opacity: 0;
+			width: 100%;
+			position: absolute;
+
+			&.active { opacity: 1; }
+		}
+	}
+}
+

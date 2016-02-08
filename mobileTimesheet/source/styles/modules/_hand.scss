@@ -1,0 +1,26 @@
+.hand {
+	position: relative;
+	left: 4vw; top: -3vw;
+	transform: rotate(-9deg);
+	width: 21vw; height: 21vw;
+	background: url(../svgs/icon--hand.svg) no-repeat 0 0 / 100% 100%;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: -10.5vw; left: -3vw;
+		transform: rotate(9deg);
+		width: 22.5vw; height: 22.5vw;
+		background: url(../images/tracker-circles.png) no-repeat 0 0 / 100% 100%;
+	}
+}
+
+[class^='hand__arrow'] {
+	position: absolute;
+	display: inline-block;
+	transform: rotate(9deg);
+	top: -21vw; left: 4.2vw;
+	width: 3.2vw; height: 68vw;
+	background: url(../svgs/icon--dots-arrow.svg) no-repeat 0 0 / 100% 100%;
+}

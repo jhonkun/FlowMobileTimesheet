@@ -1,0 +1,97 @@
+.tracker {
+	user-select: none;
+	position: relative;
+	margin: 15vw auto 6vw;
+	width: 83.5vw; height: 83.5vw; // must match .overlay__group with/height
+
+	ks-swiper-container {
+		top: -10vw;
+		position: relative;
+	}
+
+	.swiper-container { height: auto; padding: 1vw 0; top: -1vw; }
+	.swiper-button-next, .swiper-button-prev { top: 0; height: 100%; background-image: url(../svgs/icon--angle-white.svg); }
+}
+
+
+.tracker__date {
+	h3 { color: $white; }
+}
+
+.tracker__inner {
+	top: 0;
+	position: absolute;
+	transform: rotate(45deg);
+	width: 100%; height: 100%;
+}
+
+[class^='tracker__bg'] {
+	position: absolute;
+	transform: rotate(-45deg);
+	width: 100%; height: 100%;
+	background: url(../svgs/tracker-bg--en.svg) no-repeat -.4vw .8vw / 100% 100%;
+}
+
+.tracker__groups {
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	border-radius: 50%;
+	width: 100%; height: 100%;
+	transform: rotate(-45deg);
+}
+
+[class^='tracker__data'] {
+	color: $white;
+	display: flex;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	top: 0; left: 0; right: 0; bottom: 0;
+
+	span { @include anime(opacity); }
+
+	.tracker__value { opacity: 0; }
+	.tracker__plus { opacity: 1; }
+}
+
+.tracker__data--active {
+	.tracker__value { opacity: 1; }
+	.tracker__plus { opacity: 0; }
+}
+
+.tracker__value { font-size: 10.5vw; font-family: $ff--medium; }
+
+.tracker__plus {
+	position: absolute;
+	width: 16vw; height: 16vw;
+	background: url(../svgs/icon--plus.svg) no-repeat 0 0 / 100% 100%;
+}
+
+[class^='tracker__group--'] {
+	position: relative;
+	width: 50%; height: 50%;
+}
+
+$plus-gap: 7.5vw;
+$value-gap: 10vw;
+
+.tracker__group--vegs {
+	.tracker__plus { bottom: $plus-gap; right: $plus-gap; }
+	> div { padding-left: $value-gap; padding-top: $value-gap; }
+}
+
+.tracker__group--grain {
+	.tracker__plus { bottom: $plus-gap; left: $plus-gap; }
+	> div { padding-top: $value-gap; padding-right: $value-gap; }
+}
+
+.tracker__group--milk {
+	.tracker__plus { top: $plus-gap; right: $plus-gap; }
+	> div { padding-left: $value-gap; padding-bottom: $value-gap; }
+}
+
+.tracker__group--meat {
+	.tracker__plus { top: $plus-gap; left: $plus-gap; }
+	> div { padding-right: $value-gap; padding-bottom: $value-gap; }
+}

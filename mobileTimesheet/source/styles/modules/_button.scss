@@ -1,0 +1,94 @@
+button,
+[class^='button'] { @include anime(opacity);
+	margin: 0;
+	cursor: pointer;
+	line-height: 1em;
+	font-size: 6.78vw;
+	position: relative;
+	padding: .42em .45em;
+	color: $blue--grayish;
+	text-decoration: none;
+	font-family: $ff--bold;
+	background-color: $white;
+	border: .2em solid $blue--light;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	&:focus { outline: none; }
+
+	&[disabled='disabled'] { opacity: .4; }
+}
+
+.button--arrow {
+	&:before {
+		top: -100%;
+		content: '';
+		width: 100%;
+		height: 1.35em;
+		position: absolute;
+		margin: -0.48em 0 0 -0.48em;
+		background: url(../images/welcome-down-arrow.svg) no-repeat;
+		background-size: 100% 100%;
+
+		@include mq('short'){ display:none;}
+	}
+}
+
+[class^='button--icon-'] {
+	font-size: 4.5vw;
+	background: none;
+	border: 0; padding: 0;
+	font-family: $ff--medium;
+
+	&:after, &:before {
+		content: '';
+		position: relative;
+		border-radius: 50%;
+		display: inline-block;
+		width: 3.8vw; height: 3.8vw;
+		top: .5vw; margin: 0 0 0 1.5vw;
+	}
+
+	&:before { margin: 0 1.5vw 0 0; }
+}
+
+.button--icon-forth {
+	&:before { display: none; }
+	&:after {
+		margin-right: -5.3vw; // pseudo width + its margin
+		background: $blue--light url(../svgs/icon--arrow.svg) no-repeat 0 0 / 100% 100%;
+	}
+}
+
+.button--icon-forth-white {
+	color:$white;
+	&:before { display: none; }
+	&:after { background: $white url(../svgs/icon--arrow-blue.svg) no-repeat 0 0 / 100% 100%; }
+}
+
+.button--icon-back {
+	&:after { display: none; }
+	&:before {
+		transform: rotate(180deg);
+		background: $blue--light url(../svgs/icon--arrow.svg) no-repeat 0 0 / 100% 100%;
+	}
+}
+
+.button--icon-add {
+	&:before { display: none; }
+	&:after { background: $blue--light url(../svgs/icon--add.svg) no-repeat 0 0 / 100% 100%; }
+}
+
+.button--icon-delete {
+	@extend .button--icon-add;
+	&:after { transform: rotate(45deg); }
+}
+
+.button--round {
+	width:24vw;
+	height:24vw;
+	border-radius: 50%;
+	font-size: 4.5vw;
+	border:1.8vw solid $blue--light;
+}
+
+.button--middle{ margin-top: 10vw; }

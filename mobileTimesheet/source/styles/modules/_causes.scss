@@ -1,0 +1,51 @@
+.cause { margin-bottom: 4vw; }
+
+.cause__input[type=radio] {
+	display: none;
+
+	&:checked + label:before { background-color: $blue; }
+	&:disabled + label:before { background-color: $gray--lighter; border-color: $gray--lighter; }
+}
+
+.cause__reached {
+	width: 4rem;
+	color: $blue;
+	height: 14vw;
+	display: none;
+	font-size: 3.8vw;
+	line-height: 1.1em;
+	position: absolute;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	font-family: $ff--medium;
+	right: -2.3vw; top: 6.5vw;
+	text-transform: uppercase;
+
+	input:disabled + label & { display: flex; }
+}
+
+.cause__label {
+	height: 15vh;
+	display: block;
+	text-align: right;
+	position: relative;
+
+	&:before {
+		content: "";
+		display: block;
+		top: 6vw; right: 0;
+		position: absolute;
+		border-radius: 50%;
+		background-color: $white;
+		width: 14vw; height: 14vw;
+		border: 0.35rem solid $blue;
+	}
+}
+
+[class^='cause__logo'] { width:65%; height: 15vh; }
+.cause__logo--osteoporosis { background: url(../images/logo-osteoporosis.png) no-repeat 0 50% / 100% auto; }
+.cause__logo--heart { background: url(../images/logo-heart.png) no-repeat 0 50% / 100% auto; }
+.cause__logo--colorectal { background: url(../images/logo-colorectal.png) no-repeat 0 50% / 100% auto; }
+
+.cause__all-maxed div { margin: 0 auto; }

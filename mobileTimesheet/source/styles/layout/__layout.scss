@@ -1,0 +1,27 @@
+// Import layout submodules
+.l-wrapper { @include anime(transform);
+	height:100vh;
+	padding: 0 5%;
+	overflow: hidden;
+	min-height: 480px;
+	position: relative;
+	transform: translate3d(0, 0, 0);
+
+	.l-main > p {
+		&:first-child { margin-top: 0; }
+		&:last-of-type { margin-bottom: 0; }
+	}
+
+	.modal & { height: calc(100vh - 15vw); } // modal header/close is 15vw height
+}
+
+.l-constrain {
+	margin: 0 auto;
+	max-width: 940px;
+}
+
+.l-block {
+	margin: 1.5rem auto;
+
+	& + .l-block { margin-top: 0; }
+}

@@ -1,0 +1,45 @@
+.report{
+	header{margin-bottom:0;}
+}
+
+.report__wrapper{
+	padding: 0 5%;
+}
+.report [class^='cause__logo']{
+	float:none;
+	width: 100%;
+	height:15vh;
+	background-size: 55vw auto !important;
+	background-position: center;
+}
+.report__donation{
+	position: relative;
+	height:22vw;
+
+	div:nth-child(1){
+		width:60vw;
+		color:$blue;
+		font-family: $ff--medium;
+		font-size: 4vw;
+		padding-top: 8vw;
+	}
+	div:nth-child(2){
+		position: absolute;
+		width:22vw; height:22vw;
+		right:5vw;
+		top:0;
+		line-height: 22vw;
+		border-radius: 50%;
+		background: $gray--lighter;
+		font-family: $ff--medium;
+		text-align: center;
+		color:$blue;
+		font-size: 7.5vw;
+		z-index: 2;
+	}
+}
+.report__share{
+	text-align: center;
+	margin-top:6vw;
+	button{margin-top:6vw;}
+}
