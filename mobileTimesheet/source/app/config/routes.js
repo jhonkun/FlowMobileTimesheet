@@ -1,4 +1,5 @@
 import login from '../views/login/login.route.js';
+import timesheet from '../views/timesheet/timesheet.route.js';
 
 export default
 
@@ -14,7 +15,9 @@ function router($locationProvider, $urlRouterProvider, $stateProvider, $httpProv
 console.log("WE ARE ON ROUTE");
 
 	$stateProvider
-		.state('login', login);
+		.state('login', login)
+		.state('timesheet', timesheet);
+
 
 	$urlRouterProvider.otherwise('/login');
 }
